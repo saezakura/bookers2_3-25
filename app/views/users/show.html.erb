@@ -1,3 +1,15 @@
 <p>（メモ）1ユーザーの全投稿.ログイン後遷移先</p>
 
-<%= render 'books/list', books:@book %>
+<%= render 'books/list', books:@new_book %>
+
+<h2>Books</h2>
+<h4>title</h4>
+<h4>opinion</h4>
+
+<% @books.each do |book| %>
+ <div>
+    <!--user_profile_image-->
+    <p>title:<%= book.title %></p>
+    <p>opinion:<%= book.opinion %></p>
+ </div>
+<% end %>
