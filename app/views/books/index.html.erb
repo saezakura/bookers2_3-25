@@ -1,5 +1,10 @@
-<p>(メモ）すべての投稿一覧</p>
-
 <!--左・ユーザーのプロフィールと投稿フォーム-->
-<%= render 'users/list', books:@book %>
+<%= render 'list', books:@book %>
 
+<h2>Books</h2>
+<p>title</p>
+<p>opinion</p>
+<% @books.each do |book| %>
+ <%= book.title %>
+ <%= book.opinion %>
+<% end %>

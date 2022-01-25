@@ -1,3 +1,14 @@
 <p>（メモ）Book detail １投稿詳細</p>
 
-<%= render 'users/list', books:@book %>
+<%= render 'list', books:@new_book %>
+
+<h2>Book detail</h2>
+<div>
+ <%= @book.user.name %>
+ <%= @book.title %>
+ <%= @book.opinion %>
+</div>
+
+<!--link_to edit,destroy-->
+<%= link_to "edit", edit_book_path(@book.id) %>
+
