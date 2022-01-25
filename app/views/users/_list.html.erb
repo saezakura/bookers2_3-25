@@ -1,0 +1,19 @@
+<!--左・ユーザーのプロフィールと投稿フォーム-->
+<div class="user_info">
+<h3>User info</h3>
+
+ <p>name</p>
+
+ <p>introduction</p>
+
+
+<h3>New Book</h3>
+ <%= form_with model:books,local:true do |f| %>
+  <h4>title</h4>
+   <%= f.text_field:title %>
+  <h4>Opinion</h4>
+   <%= f.text_area :opinion %>
+  <%= f.submit  'Create Book' %>
+ <% end %>
+ 
+ </div>
