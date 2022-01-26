@@ -1,5 +1,6 @@
 <p>（メモ）Book detail １投稿詳細</p>
 
+<%= render 'users/user', user:@user %>
 <%= render 'list', books:@new_book %>
 
 <h2>Book detail</h2>
@@ -9,6 +10,8 @@
  <%= @book.opinion %>
 </div>
 
-<!--link_to edit,destroy-->
 <%= link_to "edit", edit_book_path(@book.id) %>
+<% if @book.user == current_user %>
+ <%= link_to "destroy", book_path(@book),method: :delete, "date-confirm" => "Are you sure?"  %>
+<% end %>
 
