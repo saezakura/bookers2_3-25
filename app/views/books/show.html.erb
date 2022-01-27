@@ -9,7 +9,7 @@
  <table class="table table-hover table-inverse">
   <tbody>
    <tr>
-    <td><%= image_tag @book.user.profile_image %></td>
+    <td><%= image_tag book.user.get_profile_image("40x40") %></td>
     <td><%= book.title %></td>
     <td><%= book.body %></td>
     <% if @book.user == current_user %>
