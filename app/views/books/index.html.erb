@@ -1,11 +1,39 @@
-<!--左・ユーザーのプロフィールと投稿フォーム-->
-<%= render 'users/user', user:@user %>
-<%= render 'list', books:@book %>
-
-<h2>Books</h2>
-<p>title</p>
-<p>opinion</p>
-<% @books.each do |book| %>
- <%= book.title %>
- <%= book.body %>
+<%= flash.each do |key,value| %>
+ <%= content_tag(:div, value, class:"#{key}") %>
 <% end %>
+
+<% if @book.errors.any? %>
+ <%= @book.errors.count %>件のerrorが発生しました。
+ <ul>
+  <% @book.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+  <% end %>
+ </ul>
+<% end %>
+
+<%= render 'users/user', user:@user %>
+<%= render 'books/list', book:@book %>
+
+<div class="col-md-8 offset-md-1">
+ <h2>Books</h2>
+ <table class="table table-hover table-inverse">
+  <thead>
+   <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+    <th colspan="3"></th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <% @books.each do |book| %>
+    <td><%= image_tag book.user.get_profile_image("100x100") %></td>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+    <% end %>
+   </tr>
+  </tbody>
+ </table>
+
+</div>

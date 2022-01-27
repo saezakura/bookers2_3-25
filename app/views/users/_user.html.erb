@@ -1,9 +1,24 @@
-<div class="user_info">
- <h3>User info</h3>
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-md-3">
+
+   <h2>User info</h2>
   <%#= image_tag book.user.get_profile_image("100x100") %>
-  <p>name<%= user.name %></p>
-  <p>introduction<%= user.introduction %></p>
-  <% if user==current_user %>
-   <%= link_to "edit",edit_user_path(user.id) %>
-  <% end %> 
+
+   <table class="table">
+    <tbody>
+     <tr>name<%= user.name %></tr>
+     <tr>introduction<%= user.introduction %></tr>
+    </tbody>
+   </table>
+
+   <div class="row">
+    <% if user==current_user %>
+     <%= link_to "edit",edit_user_path(user.id) %>
+    <% end %>
+   </div>
+  <!--↓col-md-3-->
+  </div>
+<!--↓row-->
+ </div>
 </div>

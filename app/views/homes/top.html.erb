@@ -1,3 +1,17 @@
 <h1>welcome to Bookers!!</h1>
 
-<p>（メモ）ログイン・サインアップボタンをおいて、遷移する</p>
+
+<%= flash.each do |key,value| %>
+ <%= content_tag(:div, value, class:"#{key}") %>
+<% end %>
+
+
+<p>In Bookers,</p>
+
+<p>
+  you can share and exchange your opinions, inpressions, and emotions<br>
+  about various books!
+</p>
+
+<%= link_to "Log in",new_user_session_path %>
+<%= link_to "Sign up",new_user_registration_path %>

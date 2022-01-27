@@ -1,13 +1,33 @@
-<p>(メモ）ユーザー一覧</p>
+
 
 <%= render 'user', user:@user %>
 <%= render 'books/list', books:@book %>
 
-<h2>Users</h2>
-<p>user</p>
-<p>introduction</p>
 
-<% @users.each do |user| %>
- <%= user.name %>
- <%= user.introduction %>
-<% end %>
+<div class="col-md-8 offdet-md-1">
+ <h2>Users</h2>
+ <table class="table table-hover table-inverse">
+  <thead>
+   <tr>
+    <th></th>
+    <th>Image</th>
+    <th>name</th>
+    <th colspan="3"></th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+   <% @users.each do |user| %>
+    <td><%= image_tag user.get_profile_image("40x40") %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to "show", user_path(@user.id) %></td>
+   <% end %>
+   </tr>
+  </tbody>
+ </table>
+</div>
+
+
+
+
+
