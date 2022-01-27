@@ -1,7 +1,9 @@
 <div class="user_info">
  <h3>User info</h3>
-  <%= image_tag user.get_profile_image("100x100") %>
+  <%#= image_tag book.user.get_profile_image("100x100") %>
   <p>name<%= user.name %></p>
   <p>introduction<%= user.introduction %></p>
-  <%= link_to "edit",edit_user_path(@user.id) %>
+  <% if user==current_user %>
+   <%= link_to "edit",edit_user_path(user.id) %>
+  <% end %> 
 </div>

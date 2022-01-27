@@ -2,3 +2,12 @@
 
 <%= render 'user', user:@user %>
 <%= render 'books/list', books:@book %>
+
+<h2>Users</h2>
+<p>user</p>
+<p>introduction</p>
+
+<% @users.each do |user| %>
+ <%= user.name %>
+ <%= user.introduction %>
+<% end %>
