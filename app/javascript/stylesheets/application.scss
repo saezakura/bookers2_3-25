@@ -1,0 +1,23 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;;
+ }
+clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.title {
+  color: #fff;
+  font-size: 20px;
+}
+.body {
+  margin: 55px 10% 0px 8%;
+}
+.notice {
+  color: green;
+  }

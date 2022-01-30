@@ -16,6 +16,8 @@ class BooksController < ApplicationController
     flash[:notice]='book save successfully'
     redirect_to book_path(@book.id)
    else
+    @books=Book.all
+    @user=current_user
     render :index
    end
   end
@@ -28,6 +30,11 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    if @book.user == current_user
+     render :edit
+    else
+     redirect_to books_path
+    end
   end
 
   def update
@@ -51,4 +58,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body)
   end
+
 end
