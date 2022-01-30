@@ -4,7 +4,6 @@ class BooksController < ApplicationController
 
   def index
    @user=current_user
-   @new_book=Book.new
    @book=Book.new
    @books=Book.all
   end
@@ -43,7 +42,7 @@ class BooksController < ApplicationController
      flash[:notice]='book update successfully'
      redirect_to book_path(@book)
     else
-      render :index
+      render :edit
     end
   end
 
